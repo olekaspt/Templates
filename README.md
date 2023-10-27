@@ -110,5 +110,35 @@ Node<ItemType>::Node(ItemType val, std::shared_ptr<Node<ItemType>> nextNode) : m
 }
 ```
 
+For the LinkedList we will do the same as well.  With some additional points
 
+Any inherited classes needs to also include the template.  So in this case 
 
+From :
+```cpp
+class LinkedList : public IList
+{
+```
+To :
+```cpp
+template <class ItemType>
+class LinkedList : public IList<ItemType>
+{
+```
+
+And in the txx file
+From :
+```cpp
+LinkedList::LinkedList() : IList(), m_head(nullptr), m_tail(nullptr)
+{
+
+}
+```
+To :
+```cpp
+template <class ItemType>
+LinkedList<ItemType>::LinkedList() : IList<ItemType>(), m_head(nullptr), m_tail(nullptr)
+{
+
+}
+```
