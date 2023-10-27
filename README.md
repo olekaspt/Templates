@@ -61,5 +61,36 @@ Now add to the bottom of the header file include the appropiate txx file.  For e
     #include "Node.txx"
 ```
 
+## Adjust Header files
+Below is what to change to Node.h
+
+We need to mark the template with template <class ItemType>, and then everywhere int was used, we replace with ItemType.   
+
+```cpp
+template <class ItemType>
+class Node
+{
+private:
+	ItemType m_value;
+	Node<ItemType> * m_next;
+
+public:
+	Node() = delete;
+	Node(ItemType val);
+	Node(ItemType val, Node * nextNode);
+	void setItem(const ItemType& val);
+	void setNext(Node* nextNodePtr);
+	ItemType getItem() const;
+	Node * getNext() const;
+	virtual ~Node();
+	
+};
+
+#include "Node.txx"
+```
+
+
+
+
 
 
