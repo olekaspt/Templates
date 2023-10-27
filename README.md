@@ -10,8 +10,8 @@ This code is taken as starting point from https://github.com/olekaspt/Lab01
 # NonTemplate Implementation
 I took the files form Lab01 and renamed then.  I also renamed the classes to reflect the file names.
 
-* Node.cpp and Node.h -> NodeNonTemplate.cpp NodeNonTempalte.h
-* LinkedList.cpp and LinkedList.h -> LinkedListNonTemplate.cpp LinkedListNonTempalte.h
+* Node.cpp and Node.h -> NodeNonTemplate.cpp NodeNonTemplate.h
+* LinkedList.cpp and LinkedList.h -> LinkedListNonTemplate.cpp LinkedListNonTemplate.h
 * tests.cpp -> testsOld.cpp  
 * main.cpp -> mainOld.cpp
 
@@ -71,7 +71,8 @@ Now add to the bottom of the header file include the appropiate txx file.  For e
 ## Adjust Header files
 Below is what to change to Node.h
 
-We need to mark the template with template <class ItemType>, and then everywhere int was used, we replace with ItemType.   
+We need to mark the class with template <class ItemType>, and then everywhere int was used, we replace with ItemType.   We are also
+using smart pointers so adding those instead of dumb pointers.
 
 ```cpp
 #pragma once
