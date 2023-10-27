@@ -7,7 +7,7 @@ Objective: The goal of this repo is meant to show how to translate a implementat
 
 This code is taken as starting point from https://github.com/olekaspt/Lab01
 
-# NonTempalte Implementation
+# NonTemplate Implementation
 I took the files form Lab01 and renamed then.  I also renamed the classes to reflect the file names.
 
 * Node.cpp and Node.h -> NodeNonTemplate.cpp NodeNonTempalte.h
