@@ -92,8 +92,23 @@ public:
 #include "Node.txx"
 ```
 
+And then in the txx file, you need to change the implementation from:
 
+```cpp
+Node::Node(ItemType val, Node * nextNode) : m_value(val), m_next(nextNode)
+{
 
+}
+```
+
+To:
+```cpp
+template <class ItemType>
+Node<ItemType>::Node(ItemType val, std::shared_ptr<Node<ItemType>> nextNode) : m_value(val), m_next(nextNode)
+{
+
+}
+```
 
 
 
