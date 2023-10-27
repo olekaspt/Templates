@@ -142,3 +142,6 @@ LinkedList<ItemType>::LinkedList() : IList<ItemType>(), m_head(nullptr), m_tail(
 
 }
 ```
+
+But the rest of the changes shoudl be similiar as we did Node.h and Node.txx
+
