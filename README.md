@@ -20,6 +20,8 @@ I took the files form Lab01 and renamed then.  I also renamed the classes to ref
 
 I took the code from Lab01 and make a couple of changes.  First I deleted the ArrayBased LinkedList.  
 
+## Modify usage of soon to be Tempalte classes
+
 Next change the all usages of classes to be templates.
 From:
 ```cpp
@@ -38,3 +40,26 @@ To:
 ```cpp
     void TestEmpty(IList<int>& list)
 ```
+
+## Rename files and adjust includes
+Change cpp files to be txx, to indicate that is not cpp file and meant to be compiled
+
+* Node.cpp  -> Node.txx
+* LinkedList.cpp -> LinkedList.txx
+
+Modify CMakeLisst.txt
+
+Take out this line and all references to applibrary.  As Templates are generated on demaned and compiled as needed.
+```
+add_library (applibrary SHARED Nodee.cpp LinkedList.cpp )
+```
+
+Now take out header file include in txx (which used to cpp).
+
+Now add to the bottom of the header file include the appropiate txx file.  For example in Node.h
+```cpp
+    #include "Node.txx"
+```
+
+
+
