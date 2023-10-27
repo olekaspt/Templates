@@ -20,17 +20,24 @@ I took the files form Lab01 and renamed then.  I also renamed the classes to ref
 
 I took the code from Lab01 and make a couple of changes.  First I deleted the ArrayBased LinkedList.  
 
-## Modify usage of soon to be Tempalte classes
+## Modify usage of soon to be Template classes
 
 Next change the all usages of classes to be templates.
 From:
 ```cpp
-			LinkedList linkedList = LinkedList();
+LinkedList linkedList = LinkedList();
+
+	OR
+
+Node * node1 = new Node(1);
 
 ```
 To:
 ```cpp
-			LinkedList<int> linkedList = LinkedList<int>();
+LinkedList<int> linkedList = LinkedList<int>();
+
+	OR
+std::shared_ptr<Node<int>> node1 = std::make_shared<Node<int>>(1);
 ```
 Additionally the signature of the type passed into the generic testcases needs to be chagned.
 ```cpp
