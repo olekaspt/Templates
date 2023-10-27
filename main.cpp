@@ -8,22 +8,22 @@
 int main()
 {
 
-	Node<int> * head = nullptr;
+	std::shared_ptr<Node<int>>  head = nullptr;
 
-	Node<int> * cur = nullptr;
+	std::shared_ptr<Node<int>> cur = nullptr;
 
-	head = new Node(1);
+	head = std::make_shared<Node<int>>(1);
 
 	cur = head;
 
-	Node<int> * temp = new Node<int>(2);
+	std::shared_ptr<Node<int>> temp = std::make_shared<Node<int>>(2);
 
 	cur->setNext(temp);
 
 	cur = cur->getNext();
 
 	temp = nullptr;
-	temp = new Node<int>(3);
+	temp = std::make_shared<Node<int>>(3);
 
 	cur->setNext(temp);
 
